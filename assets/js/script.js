@@ -46,7 +46,7 @@ var questionArray = [
 
 let questionIndex = 0;
 let scoreCount = 0;
-let timerCount = 30;
+let timerCount = 15;
 let storedUsers;
 console.log(questionArray[0].question)
 
@@ -64,7 +64,7 @@ function startTimer() {
     timer.textContent = "Time:" + timerCount;
     let countdown = setInterval(() => {
         timerCount--;
-        timer.textContent = "Time:" + timerCount;
+        timer.textContent = "Time: " + timerCount;
         if(timerCount <= 0) {
             clearInterval(countdown);
             endQuiz();
@@ -74,7 +74,8 @@ function startTimer() {
 
 //Display first question with 4 possible answers
 function runQuiz () {
-    score.textContent = "Score:" + scoreCount;
+    score.textContent = "Score: " + scoreCount;
+    quiz.style.display = "block"
     questions.textContent = questionArray[questionIndex].question;
     for (let i = 0; i < questionArray[questionIndex].choices.length; i++) {
         let choiceBtn = document.createElement("button")
@@ -109,14 +110,16 @@ function manageUserSelection(userSelection) {
 
 function endQuiz() {
     //If placed in HTML together, then all of this could hide with one command
-    quiz.style.display = "none"
-    score.textContent = "Score:" + scoreCount;
+    quiz.style.display = "none";
+    timer.style.display = "none";
+    score.textContent = "Score: " + scoreCount;
     initialsForm.style.display = "block"
 }
 
 //Save the high score on local storage
 function onPageLoad () {
     initialsForm.style.display = "none";
+    quiz.style.display = "none"
     if(JSON.parse(localStorage.getItem("highScores")) === null) {
         storedUsers = [];
     }

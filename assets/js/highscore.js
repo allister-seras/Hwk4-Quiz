@@ -18,7 +18,7 @@ function getHighScores () {
 
     for (let i = 0; i < topScores.length; i++) {
         leaderboard = document.createElement("div")
-        leaderboard.textContent = "User: " + storedUsers[i].user + " Score: " + storedUsers[i].userScore
+        leaderboard.textContent = storedUsers[i].user + " | " + storedUsers[i].userScore
         highScores.append(leaderboard);
     }
 }
