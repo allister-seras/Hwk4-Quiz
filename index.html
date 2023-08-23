@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Taviraj:ital,wght@0,200;0,300;0,400;1,300;1,400&display=swap">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>D&D 5e Beginners Quiz</h1>
+        </header>
+        <div class="quiz-body">
+            <button id="startBtn">Start!</button>
+            <a href="highscore.html">
+                <button id="highScoresBtn">High Scores</button>
+            </a>
+            <div id="score"></div>
+            <section id="quiz">
+                <div id="timer"></div>
+                <div id="questions"></div>
+                <div id="choices"></div>
+            </section>    
+            <form id = "initialsForm">
+                <input type="text" id="initials" placeholder="Enter Your Initials Here">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
